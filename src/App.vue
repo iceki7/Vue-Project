@@ -1,32 +1,92 @@
 <template>
+ 
   <div id="app">
     <div id="nav">
+<h1>  北京科技大学忆寻煜熠南昌实践团</h1>
+
+ 
+
+  <el-menu  
+        background-color="#A00"
+        text-color="#fff"
+        active-text-color="#FC0" 
+        :default-active="this.$router.path"
+        router
+        class="el-menu-demo"
+        mode="horizontal">
+         <el-menu-item index="/" >主页</el-menu-item>
+      <el-menu-item index="/history">校外党史探访</el-menu-item>
+      <el-menu-item index="/classroom">校内第二课堂</el-menu-item>
+      <el-menu-item index="/exchange">线上积分兑换</el-menu-item>
+      <el-menu-item index="/service">服务指南</el-menu-item>
+      <el-menu-item index="/about">关于我们</el-menu-item>
+
+
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+            <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+            <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item index="/login" v-if='!username'>注册/登录</el-menu-item>
+      <el-menu-item index="/login" v-if='username'>欢迎您，<span id="name">{{username}}</span></el-menu-item>
+       </el-menu>
+ 
+  
+   
+
+
+       
+
+       
+      <!-- <el-menu-item onclick="window.location.href = 'https://bilibili.com'">B站</el-menu-item>
+-->
+ <!--
+ <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">
+ -->
+
+   <!--
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+   -->
+
     </div>
-    <router-view/>
+    <router-view/>  <!--将路由vue的内容呈现在网页上-->
   </div>
 </template>
 
+<script>
+
+export default{
+    data(){
+        return {
+            username:this.GLOBAL.username
+        }
+    },
+    methods:{
+       
+    }
+    }
+    
+
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body{
+  font: 20px 华文中宋;
+  color:#933;
+
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

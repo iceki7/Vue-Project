@@ -1,0 +1,59 @@
+
+
+/*
+reg,login style
+
+*/
+input,span,#top{
+    color:#000;
+    font:20px 华文中宋;
+}
+input{
+    font:20px;
+    color:#000;
+}
+#top{
+    width: 500px;
+    height: 500px;
+    background-color:#DDD;
+text-align: center;
+
+    margin: auto;
+    padding: 25px;
+
+}
+.sub{
+    margin-top: 20px;
+}
+
+input:hover,input:focus{
+
+    /* -webkit-transition:border ease-in-out 0.5s,box-shadow ease-in-out 0.5s;*/
+
+    box-shadow: 0px 0px 5px 0px #FFF;
+    border-color: #fff;
+}
+label{
+    display: block;
+    margin: 10px;
+}
+a:hover{
+    color:#FFF;
+}
+a{
+    color:#000;
+}
+
+.el-button{
+    margin:20px;
+}
+
+.in{
+    margin: auto 150px;
+}
+input{
+    margin: auto;
+      border:1px solid #aaa;
+  
+   
+}
