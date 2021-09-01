@@ -22,7 +22,7 @@
       <el-menu-item index="/about">关于我们</el-menu-item>
 
 
-      <el-menu-item  disabled></el-menu-item>
+       <el-menu-item index="/test">test</el-menu-item>
       <el-menu-item  disabled></el-menu-item>
       <el-menu-item  disabled></el-menu-item>
       <el-menu-item  disabled></el-menu-item>
@@ -37,11 +37,11 @@
       <el-menu-item  disabled></el-menu-item>
       <el-menu-item  disabled></el-menu-item>
             <el-menu-item  disabled></el-menu-item>
-      <el-menu-item  disabled></el-menu-item>
-      <el-menu-item  disabled></el-menu-item>
+
       <el-menu-item  disabled></el-menu-item>
       <el-menu-item index="/login" v-if='!username'>注册/登录</el-menu-item>
-      <el-menu-item index="/login" v-if='username'>欢迎您，<span id="name">{{username}}</span></el-menu-item>
+      <el-menu-item  v-if='username'>欢迎您，<span id="name">{{username}}</span></el-menu-item>
+      <el-menu-item @click="logout" v-if='username'>登出</el-menu-item>
        </el-menu>
  
   
@@ -75,7 +75,15 @@ export default{
         }
     },
     methods:{
-       
+       logout(){
+            window.sessionStorage.removeItem('token');
+            window.sessionStorage.removeItem('username');
+         
+
+             this.$router.push('/');
+             location.reload();//F5 
+       }
+
     }
     }
     

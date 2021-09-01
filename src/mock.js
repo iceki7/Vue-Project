@@ -2,7 +2,33 @@ const Mock = require('mockjs');
 
 const Random=Mock.Random;
 
+const testset=function(){
+  return {
+    success:true,
+    questionList:[
+      {
 
+        kind:1,ask:'问题1',qid:9999,
+        option:{
+          a:'123',
+          b:'456',
+          c:'789',
+          d:'666'
+        }
+      },
+      {
+        kind:1,ask:'问题2',qid:5555,
+        option:{
+          a:'1',
+          b:'2',
+          c:'3',
+          d:'4'
+        }
+      }
+    ],
+    
+  }
+}
 //for reg,login
 const fakedata=function(){
     //let articles = [];
@@ -25,6 +51,6 @@ const fakedata=function(){
 
 
 }
-
+Mock.mock('/quiz/getTest','post',testset);
 Mock.mock('/forum/login', 'post', fakedata);
 Mock.mock('/forum/register', 'post', fakedata);

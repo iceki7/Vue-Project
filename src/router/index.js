@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import home from '../views/home.vue'
 import login from '../views/login.vue'
 import reg from '../views/reg.vue'
+import test from '../views/test.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -28,6 +29,11 @@ const routes = [
     path:'/reg',
     name:'reg',
     component:reg
+  },
+  {
+    path:'/test',
+    name:'test',
+    component:test
   }
 ]
 
