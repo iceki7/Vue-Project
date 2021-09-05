@@ -4,6 +4,7 @@ import home from '../views/home.vue'
 import login from '../views/login.vue'
 import reg from '../views/reg.vue'
 import test from '../views/test.vue'
+import forum from '../views/forum.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -34,6 +35,11 @@ const routes = [
     path:'/test',
     name:'test',
     component:test
+  },
+  {
+    path:'/forum',
+    name:'forum',
+    component:forum
   }
 ]
 

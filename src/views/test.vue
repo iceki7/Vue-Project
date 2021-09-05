@@ -29,7 +29,6 @@ export default {
         return{
             radio: 3,
             items:[],
-            all: ['com1','com1'],
             test: 'asdasd'
 
         }
@@ -41,7 +40,8 @@ export default {
     methods:{
         updateAns(value,qid)
         {
-            console.log("答案更新,ans="+value);
+            console.log(this.id+"答案更新,ans="+value);
+            
         },
         submit()
         {
@@ -72,7 +72,7 @@ export default {
       }
       else
       {
-          console.log("获取题目失败。原因："+resp.data.message);
+          console.log("获取题目失败。原因："+resp.data.msg);
       }
         })
     }

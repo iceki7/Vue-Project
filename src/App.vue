@@ -21,8 +21,9 @@
       <el-menu-item index="/service">服务指南</el-menu-item>
       <el-menu-item index="/about">关于我们</el-menu-item>
 
-
-       <el-menu-item index="/test">test</el-menu-item>
+      <el-menu-item index="/forum">forum</el-menu-item>
+      <el-menu-item index="/test">test</el-menu-item>
+     
       <el-menu-item  disabled></el-menu-item>
       <el-menu-item  disabled></el-menu-item>
       <el-menu-item  disabled></el-menu-item>
@@ -67,7 +68,7 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 export default{
     data(){
         return {
@@ -76,18 +77,23 @@ export default{
     },
     methods:{
        logout(){
+           
+            axios.post("/forum/logout").then(resp => {
+      if(resp.data.success==true)
+      { 
             window.sessionStorage.removeItem('token');
             window.sessionStorage.removeItem('username');
-         
-
              this.$router.push('/');
              location.reload();//F5 
+       }else{
+         console.log(resp.data.msg);
        }
 
+      })
     }
-    }
+  }
     
-
+}
 </script>
 
 <style>

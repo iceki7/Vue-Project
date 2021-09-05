@@ -36,9 +36,9 @@ const fakedata=function(){
 
       return {
         success:true,
-        token:'12345',
+        token:'device',
         username:'icekii',
-        message:Random.csentence(5, 10),
+        msg:Random.csentence(5, 10),
         notifyPic: Random.dataImage('300x250', 'mock的图片'), // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码
         notifyType: Random.integer(1, 3), //随机生成1-3的Integer
         isTop: Random.integer(1, 2), //随机生成1-2的Integer
@@ -51,6 +51,23 @@ const fakedata=function(){
 
 
 }
+const fakepost=function(){
+  //let articles = [];
+  //for (let i = 0; i < 1; i++) {
+
+    return {
+      success:true,
+      msg:'ohhhh',
+ 
+    }
+    
+  //}
+ 
+
+
+}
 Mock.mock('/quiz/getTest','post',testset);
 Mock.mock('/forum/login', 'post', fakedata);
 Mock.mock('/forum/register', 'post', fakedata);
+Mock.mock('/forum/logout','post',fakedata);
+Mock.mock('/forum/posts','post',fakepost);

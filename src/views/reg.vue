@@ -6,16 +6,16 @@
   注册
  
     <div class="sub">
-  <span>用户名&nbsp;</span><input type="text" placeholder="用户名" v-model="name">
+  <span>用户名&nbsp;</span><input type="text" placeholder="用户名" v-model="username">
     </div>
     <div class="sub">
   <span>邮箱&nbsp;</span><input type="text" placeholder="邮箱" v-model="email">
     </div>
     <div class="sub">
-     <span>密码&nbsp;&nbsp;</span><input type="password"   v-model="pwd">
+     <span>密码&nbsp;&nbsp;</span><input type="password"   v-model="password">
     </div>
     <div class="sub">
-     <span>确认密码</span><input type="password" v-model="pwd2">
+     <span>确认密码</span><input type="password" v-model="conpassword">
     </div>
       
 
@@ -33,15 +33,15 @@
     export default {
         data() {
             return {
-               name: '',
+               username: '',
                email:'',
-               pwd: '',
-               pwd2:''
+               password: '',
+               conpassword:''
             }
         },
         methods: {
             register() {
-                if(this.name==''||this.email==''||this.pwd==''||this.pwd2=='')
+                if(this.username==''||this.email==''||this.password==''||this.conpassword=='')
                 {
                      this.$notify({
                     title: '请输入完整信息',
@@ -49,7 +49,7 @@
                     message: ('i', { style: 'color: #F00'}, '')});
                     return;
                 }
-                if(this.pwd!=this.pwd2)
+                if(this.password!=this.conpassword)
                 {
                      this.$notify({
                     title: '两次密码不一致',
@@ -58,9 +58,10 @@
                     return;
                 }
                 let mydata={
-                    name: this.name,
-                    pwd: this.pwd,
-                    pwd2:this.pwd2
+                    username: this.username,
+                    password: this.password,
+                    conpassword:this.conpassword,
+                    email:this.email
                 }
                 axios.post("/forum/register",mydata).then(resp => {
 
@@ -75,7 +76,7 @@
       else{
           this.$notify.error({
           title: '注册失败',
-          message: ('i', { style: 'color: #F00'}, this.notifyList.message)
+          message: ('i', { style: 'color: #F00'}, resp.data.msg)
         });
       }
    

@@ -8,7 +8,7 @@
  
     <div class="sub">
   <span>用户名    </span>
-            <input type="text" placeholder="用户名/邮箱" v-model="name">
+            <input type="text" placeholder="用户名/邮箱" v-model="username">
     </div>
     <div class="sub">
 
@@ -32,7 +32,7 @@
     export default {
         data() {
             return {
-               name: '',
+               username: '',
                password: ''
             }
         },
@@ -43,7 +43,7 @@
                     password: this.password
                 }
 
-        if(this.name==''||this.password=='')
+        if(this.username==''||this.password=='')
         {
                this.$notify({
           title: '请填写完整信息',
@@ -74,7 +74,7 @@
       else{
           this.$notify.error({
           title: '登录失败',
-          message: ('i', { style: 'color: #F00'}, this.notifyList.message)
+          message: ('i', { style: 'color: #F00'}, resp.data.msg)
         });
       }
    
