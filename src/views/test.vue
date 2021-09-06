@@ -1,17 +1,24 @@
 <<template>
     <div>
-    <el-button @click="getTest" style="display:block margin:auto">获取测试题</el-button>
+    <el-button @click="getTest" v-if=!gotTest style="display:block margin:auto">获取测试题</el-button>
     
     <div v-for="item in items">
     <br>
     <el-card class="box-card" style="width:1300px;margin:auto">
         <div>{{item.ask}}</div>
-        <el-radio-group v-model=item.qid id=item.qid @change="updateAns">
-            <el-radio-button v-for="op in item.option" :label=Object.values({op})></el-radio-button>
+      <el-radio-group v-model=item.qs size="medium"  @change="updateAns(item.qid,$event)">
+            <div v-for="(value,name,index) in item.option">
+           
+               <el-radio-button :label="name">{{name}}.{{value}}</el-radio-button>
+             
+            </div>
+            </el-radio-group>
+         
+     
+     
      <!--label -->
       <!--label相同代表radio状态必须同步-->
 
-        </el-radio-group>
     </el-card>
     <br>
     </div>
@@ -27,6 +34,7 @@ export default {
     data()
     {
         return{
+            gotTest:false,
             radio: 3,
             items:[],
             test: 'asdasd'
@@ -38,15 +46,46 @@ export default {
         com1:() => import('../components/card.vue')
     },
     methods:{
-        updateAns(value,qid)
+        
+        updateAns(val1,val2)
         {
-            console.log(this.id+"答案更新,ans="+value);
-            
+            let dt={
+            token:sessionStorage.getItem("token"),
+            qid:val1,
+            ans:val2
+            };
+        //   console.log("答案更新,ans="+val1+' '+val2);
+            console.log(dt);
+            axios.post("/quiz/updateAns",qs.stringify(dt)).then(resp => {
+      if(resp.data.success==false){
+          console.log(resp.data.msg);
+      }
+        })
+
         },
+
+
         submit()
         {
-           
+            axios.post("/quiz/judgeTest",sessionStorage.getItem("token")).then(resp => {
+      if(resp.data.success==false){
+          this.$notify.error({
+          title: '试卷提交失败',
+          message: ('i', { style: 'color: #F00'}, resp.data.msg)
+        });
+      }else{
+          
+    this.$notify({
+          title: '试卷提交成功',
+          type:'success',
+          message: ('i', { style: 'color: #F00'}, resp.data.score)
+        });
+        location.reload();
+      }
+        })
         },
+
+
         getTest()
         {
             let dt={
@@ -65,9 +104,12 @@ export default {
       ids.push(resp.data.questionList[p].qid);   
         }
 
+
         console.log("题目序列"+ids);
         window.sessionStorage.setItem("testIds",ids);
        this.items=resp.data.questionList;//存入本地对象
+
+       this.gotTest=true;
 
       }
       else

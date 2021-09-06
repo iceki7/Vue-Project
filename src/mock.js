@@ -8,7 +8,7 @@ const testset=function(){
     questionList:[
       {
 
-        kind:1,ask:'问题1',qid:9999,
+        kind:1,ask:'问题1',qid:111,
         option:{
           a:'123',
           b:'456',
@@ -17,7 +17,7 @@ const testset=function(){
         }
       },
       {
-        kind:1,ask:'问题2',qid:5555,
+        kind:1,ask:'问题2',qid:222,
         option:{
           a:'1',
           b:'2',
@@ -71,3 +71,4 @@ Mock.mock('/forum/login', 'post', fakedata);
 Mock.mock('/forum/register', 'post', fakedata);
 Mock.mock('/forum/logout','post',fakedata);
 Mock.mock('/forum/posts','post',fakepost);
+Mock.mock('/quiz/judgeTest','post',fakedata);

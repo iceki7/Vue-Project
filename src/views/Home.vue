@@ -10,7 +10,6 @@
              <el-image
       style="height: 450px width:800px;"
       :src='item.url'
-      :fit="cover"
       alt="无图片"></el-image>
       </el-carousel-item> 
     </el-carousel>
@@ -20,7 +19,7 @@
 
   <el-card class="box-card" style="width:1300px;margin:auto;text-align:center" id="zone1">
   <div slot="header" class="clearfix" style="text-align:center">
-    <h style="margin:auto">-&nbsp;快捷操作&nbsp;-</h>
+    <h1 style="margin:auto">-&nbsp;快捷操作&nbsp;-</h1>
 
   </div>
     <el-button type="warning" round>🎮<br>游戏</el-button>
@@ -42,7 +41,7 @@
    
   <el-card class="box-card" style="width:1300px;margin:auto">
   <div slot="header" class="clearfix" style="text-align:center">
-    <h>-&nbsp;关于我们&nbsp;-</h>
+    <h1>-&nbsp;关于我们&nbsp;-</h1>
     <!--
     <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
   -->
