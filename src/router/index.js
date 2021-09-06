@@ -5,6 +5,7 @@ import login from '../views/login.vue'
 import reg from '../views/reg.vue'
 import test from '../views/test.vue'
 import forum from '../views/forum.vue' 
+import classicalArt from '../views/classicalArt.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -40,6 +41,11 @@ const routes = [
     path:'/forum',
     name:'forum',
     component:forum
+  },
+  {
+    path:'/classicalArt',
+    name:'classicalArt',
+    component:classicalArt
   }
 ]
 

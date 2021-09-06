@@ -23,6 +23,7 @@
 
       <el-menu-item index="/forum">forum</el-menu-item>
       <el-menu-item index="/test">test</el-menu-item>
+       <el-menu-item index="/classicalArt">classicalArt</el-menu-item>
      
       <el-menu-item  disabled></el-menu-item>
       <el-menu-item  disabled></el-menu-item>

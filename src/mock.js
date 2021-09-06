@@ -1,6 +1,22 @@
 const Mock = require('mockjs');
 
 const Random=Mock.Random;
+const fakeartbrowse=function(){
+  return {
+    success:true,
+    msg:'aa',
+    content: 
+        {
+                uid:1,
+                title: "我是文章1",
+                date: "2021-08-23",
+                //area":"北京",
+                text: "我是第一段。    \n我是    第二段。\n我是第三段。\n我是第四段。"
+                //picture":"1.jpg\t2.jpg\t3.jpg",
+           //     game":"www.ourweb.com/game/thefirstgame",
+        }
+    }
+}
 
 const testset=function(){
   return {
@@ -28,6 +44,28 @@ const testset=function(){
     ],
     
   }
+}
+const fakearthome=function(){
+  //let articles = [];
+  //for (let i = 0; i < 1; i++) {
+
+    return {
+      success:true,
+      msg:'aa',
+      articles:[
+        {uid:1 , 
+        title: "我是文章1" , 
+        date: "2021-08-23" },
+        {uid:2 , 
+        title: "我是文章2" , 
+        date: "2021-09-01" },
+      ]
+      }
+    
+  //}
+ 
+
+
 }
 //for reg,login
 const fakedata=function(){
@@ -72,3 +110,5 @@ Mock.mock('/forum/register', 'post', fakedata);
 Mock.mock('/forum/logout','post',fakedata);
 Mock.mock('/forum/posts','post',fakepost);
 Mock.mock('/quiz/judgeTest','post',fakedata);
+Mock.mock('/classicalArt/home','get',fakearthome);
+Mock.mock('/classicalArt/browse','post',fakeartbrowse);
