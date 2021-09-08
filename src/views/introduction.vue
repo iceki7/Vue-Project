@@ -1,6 +1,6 @@
 <template>
       <div>
-        民间艺术
+          基地介绍
  <model></model>
       </div>
 </template>
@@ -12,7 +12,7 @@ export default {
   components:{model,},
   created()
   {
-    this.GLOBAL.category=2
+    this.GLOBAL.category=1
   }
 }
 </script>

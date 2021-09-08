@@ -20,13 +20,13 @@
       <el-menu-item index="/exchange">线上积分兑换</el-menu-item>
       <el-menu-item index="/service">服务指南</el-menu-item>
       <el-menu-item index="/about">关于我们</el-menu-item>
-
-      <el-menu-item index="/forum">forum</el-menu-item>
-      <el-menu-item index="/test">test</el-menu-item>
-       <el-menu-item index="/classicalArt">classicalArt</el-menu-item>
+      <el-menu-item index="/forum">论坛</el-menu-item>
+      <el-menu-item index="/forumpost">发帖</el-menu-item>
+      <el-menu-item index="/test">答题</el-menu-item>
+      <el-menu-item index="/classicalArt">民间艺术</el-menu-item>
      
-      <el-menu-item  disabled></el-menu-item>
-      <el-menu-item  disabled></el-menu-item>
+      <el-menu-item  index="/historyFacts">历史趣闻</el-menu-item>
+      <el-menu-item  index="/introduction">基地介绍</el-menu-item>
       <el-menu-item  disabled></el-menu-item>
       <el-menu-item  disabled></el-menu-item>
       <el-menu-item  disabled></el-menu-item>

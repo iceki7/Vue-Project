@@ -1,7 +1,7 @@
 const Mock = require('mockjs');
 
 const Random=Mock.Random;
-const fakeartbrowse=function(){
+const browsef=function(){
   return {
     success:true,
     msg:'aa',
@@ -45,7 +45,7 @@ const testset=function(){
     
   }
 }
-const fakearthome=function(){
+const homef=function(){
   //let articles = [];
   //for (let i = 0; i < 1; i++) {
 
@@ -110,5 +110,8 @@ Mock.mock('/forum/register', 'post', fakedata);
 Mock.mock('/forum/logout','post',fakedata);
 Mock.mock('/forum/posts','post',fakepost);
 Mock.mock('/quiz/judgeTest','post',fakedata);
-Mock.mock('/classicalArt/home','get',fakearthome);
-Mock.mock('/classicalArt/browse','post',fakeartbrowse);
+
+Mock.mock('/article/home?category=3','get',homef);
+Mock.mock('/article/home?category=1','get',homef);
+Mock.mock('/article/home?category=2','get',homef);
+Mock.mock('/article/browse','post',browsef);

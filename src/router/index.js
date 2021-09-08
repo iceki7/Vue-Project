@@ -4,8 +4,11 @@ import home from '../views/home.vue'
 import login from '../views/login.vue'
 import reg from '../views/reg.vue'
 import test from '../views/test.vue'
-import forum from '../views/forum.vue' 
+import forum from '../views/forum.vue'
+import forumpost from '../views/forumpost.vue' 
 import classicalArt from '../views/classicalArt.vue'
+import historyFacts from '../views/historyFacts.vue'
+import introduction from '../views/introduction.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -38,14 +41,28 @@ const routes = [
     component:test
   },
   {
-    path:'/forum',
-    name:'forum',
-    component:forum
+    path:'/forumpost',
+    name:'forumpost',
+    component:forumpost
   },
   {
     path:'/classicalArt',
     name:'classicalArt',
     component:classicalArt
+  },
+  {
+    path:'/forum',
+    name:'forum',
+    component:forum
+  },{
+    path:'/historyFacts',
+    name:'historyFacts',
+    component:historyFacts
+  },
+  {
+    path:'/introduction',
+    name:'/introduction',
+    component:introduction
   }
 ]
 
